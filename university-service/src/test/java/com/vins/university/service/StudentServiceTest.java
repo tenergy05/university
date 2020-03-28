@@ -4,22 +4,15 @@ import com.vins.university.model.Dept;
 import com.vins.university.model.Student;
 import com.vins.university.service.api.IDeptService;
 import com.vins.university.service.api.IStudentService;
-import com.vins.university.service.impl.StudentServiceImpl;
-import org.hibernate.AnnotationException;
-import org.hibernate.TransientPropertyValueException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by vova on 7/31/2016.
@@ -30,7 +23,8 @@ import static org.junit.Assert.fail;
                 "classpath:university-service-test-context.xml"
         }
 )
-public class StudentServiceTest {
+public class StudentServiceTest
+{
     //private IStudentService studentService = new StudentServiceImpl();
     @Autowired
     private IStudentService studentService;
@@ -41,33 +35,40 @@ public class StudentServiceTest {
     private Dept taasiaDept;
 
     @Before
-    public void setup() {
+    public void setup()
+    {
         csDept = deptService.create(new Dept("303", "CS"));
-        assertTrue(csDept != null);
+        assertNotNull(csDept);
         System.out.println(csDept);
 
         taasiaDept = deptService.create(new Dept("104", "IE"));
-        assertTrue(taasiaDept != null);
+        assertNotNull(taasiaDept);
         System.out.println(csDept);
     }
 
     @Test
-    public void testCreateStudent() {
+    public void testCreateStudent()
+    {
         Student ireneStudent = studentService.create(new Student("306257", "irene", "n", csDept));
-        assertTrue(ireneStudent != null);
+        assertNotNull(ireneStudent);
         System.out.println(ireneStudent);
 
         Student vovaStudent = studentService.create(new Student("303932", "vova", "b", csDept));
-        assertTrue(vovaStudent != null);
+        assertNotNull(vovaStudent);
         System.out.println(vovaStudent);
 
         Student pikinesStudent = studentService.create(new Student("307123", "pikines", "k", taasiaDept));
-        assertTrue(pikinesStudent != null);
+        assertNotNull(pikinesStudent);
         System.out.println(pikinesStudent);
+
+        Student vovaStudentFetched = studentService.findBySid("303932");
+        assertNotNull(vovaStudentFetched);
+        System.out.println(vovaStudentFetched);
     }
 
     @Test(expected = DataIntegrityViolationException.class)
-    public void testCreateStudentNullDept() {
+    public void testCreateStudentNullDept()
+    {
         Student nullDeptStudent = studentService.create(new Student("777", "nobody1", "zzz",
                 null
         ));

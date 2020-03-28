@@ -1,6 +1,5 @@
 package com.vins.university.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -9,7 +8,8 @@ import javax.persistence.ManyToOne;
  * Created by vova on 7/30/2016.
  */
 @Entity
-public class Student extends BaseEntity {
+public class Student extends BaseEntity
+{
     @Column(unique = true)
     private String sid;
     private String firstName;
@@ -18,31 +18,41 @@ public class Student extends BaseEntity {
     @ManyToOne(optional = false) //(cascade = CascadeType.ALL) // when saving child object create parent
     private Dept dept;
 
-    public Student(String sid, String firstName, String lastName, Dept dept) {
+    public Student()
+    {
+    }
+
+    public Student(String sid, String firstName, String lastName, Dept dept)
+    {
         this.sid = sid;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dept = dept;
     }
 
-    public String getSid() {
+    public String getSid()
+    {
         return sid;
     }
 
-    public String getFirstName() {
+    public String getFirstName()
+    {
         return firstName;
     }
 
-    public String getLastName() {
+    public String getLastName()
+    {
         return lastName;
     }
 
-    public Dept getDept() {
+    public Dept getDept()
+    {
         return dept;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         final StringBuilder sb = new StringBuilder("Student{");
         sb.append(super.toString());
         sb.append(", sid='").append(sid).append('\'');

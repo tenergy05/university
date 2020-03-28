@@ -14,9 +14,9 @@
     <dependencies>
         <!--This is old 1.x API -->
         <!--<dependency>-->
-            <!--<groupId>javax.persistence</groupId>-->
-            <!--<artifactId>persistence-api</artifactId>-->
-            <!--<version>${javax.persistence.version}</version>-->
+        <!--<groupId>javax.persistence</groupId>-->
+        <!--<artifactId>persistence-api</artifactId>-->
+        <!--<version>${javax.persistence.version}</version>-->
         <!--</dependency>-->
 
         <dependency>

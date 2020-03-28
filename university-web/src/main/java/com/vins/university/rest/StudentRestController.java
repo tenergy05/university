@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.*;
  * Created by vova on 8/6/2016.
  */
 @RestController
-public class StudentRestController extends BaseRestController {
+public class StudentRestController extends BaseRestController
+{
     final Logger logger = LoggerFactory.getLogger(StudentRestController.class);
 
     @Autowired
@@ -25,8 +26,9 @@ public class StudentRestController extends BaseRestController {
     public
     @ResponseBody
     Student getBySid(@PathVariable String sid,
-                     @RequestParam(value="expands", required=false) String expands) {
-        logger.info("sid={} expands={}", sid,expands);
+                     @RequestParam(value = "expands", required = false) String expands)
+    {
+        logger.info("sid={} expands={}", sid, expands);
 
 //        if (sid.equals("VVV"))
 //            throw new RuntimeException("Go home!!");
@@ -38,8 +40,9 @@ public class StudentRestController extends BaseRestController {
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    @ResponseStatus(value= HttpStatus.CREATED)
-    public Student create(@RequestBody Student student) {
+    @ResponseStatus(value = HttpStatus.CREATED)
+    public Student create(@RequestBody Student student)
+    {
         logger.info("{}", student);
         Student newStudent = studentService.create(student);
         return newStudent;

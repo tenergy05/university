@@ -8,51 +8,51 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
 
-    <mvc:annotation-driven />
+    <mvc:annotation-driven/>
 
-    <context:component-scan base-package="com.demo" />
+    <context:component-scan base-package="com.demo"/>
 
-    <context:component-scan base-package="com.vins.university.rest" />
+    <context:component-scan base-package="com.vins.university.rest"/>
 
-    <context:component-scan base-package="com.vins.university.service" />
-    <context:component-scan base-package="com.vins.university.repository" />
+    <context:component-scan base-package="com.vins.university.service"/>
+    <context:component-scan base-package="com.vins.university.repository"/>
 
 
     <!--<context:annotation-config/>-->
     <!--<context:component-scan base-package="com.vins.university" />-->
 
-    <context:property-placeholder location="classpath:kisa.properties" />
+    <context:property-placeholder location="classpath:kisa.properties"/>
     <!--<context:property-placeholder location="classpath:service.properties" />-->
 
     <!--Will create proxy implementation of Jpa repository-->
-    <jpa:repositories base-package="com.vins.university.repository.api" />
+    <jpa:repositories base-package="com.vins.university.repository.api"/>
 
 
     <!--DB config-->
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-        <property name="entityManagerFactory" ref="entityManagerFactory" />
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
     <!--<bean id="kisa" class="com.demo.Kisa">-->
     <!--</bean>-->
 
     <!--<bean id="koshka" class="com.demo.Koshka">-->
-        <!--<property name="color" value="green" />-->
-        <!--<property name="kisa" ref="kisa" />-->
+    <!--<property name="color" value="green" />-->
+    <!--<property name="kisa" ref="kisa" />-->
     <!--</bean>-->
 
     <!--Embedded in-memory database-->
     <bean id="entityManagerFactory"
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="dataSource" ref="dataSource" />
-        <property name="packagesToScan" value="com.vins.university.model" />
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan" value="com.vins.university.model"/>
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-                <property name="database" value="HSQL" />
-                <property name="generateDdl" value="true" />
+                <property name="database" value="HSQL"/>
+                <property name="generateDdl" value="true"/>
             </bean>
         </property>
     </bean>
-    <jdbc:embedded-database id="dataSource" type="HSQL" />
+    <jdbc:embedded-database id="dataSource" type="HSQL"/>
 
 </beans>

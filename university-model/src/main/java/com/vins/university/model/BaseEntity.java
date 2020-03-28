@@ -9,23 +9,27 @@ import javax.persistence.MappedSuperclass;
  * Created by vova on 7/30/2016.
  */
 @MappedSuperclass // THIS is needed so all derived classes inherit properties
-public abstract class BaseEntity {
+public abstract class BaseEntity
+{
     @Id
-    @GeneratedValue( strategy = GenerationType.AUTO )
+    @GeneratedValue(strategy = GenerationType.AUTO)
     protected int id;
 
     protected String createdBy;
 
-    public int getId() {
+    public int getId()
+    {
         return id;
     }
 
-    public String getCreatedBy() {
+    public String getCreatedBy()
+    {
         return createdBy;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         final StringBuilder sb = new StringBuilder("{");
         sb.append("id=").append(id);
         sb.append(", createdBy='").append(createdBy).append('\'');

@@ -15,7 +15,7 @@
         <dependency>
             <groupId>com.vins.university</groupId>
             <artifactId>university-model</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <!--3rd Party-->
@@ -44,22 +44,22 @@
         </dependency>
 
         <!--<dependency>-->
-            <!--<groupId>org.apache.commons</groupId>-->
-            <!--<artifactId>commons-dbcp2</artifactId>-->
-            <!--<version>2.1.1</version>-->
+        <!--<groupId>org.apache.commons</groupId>-->
+        <!--<artifactId>commons-dbcp2</artifactId>-->
+        <!--<version>2.1.1</version>-->
         <!--</dependency>-->
 
 
         <!--Oracle JDBC-->
         <!--<dependency>-->
-            <!--<groupId>com.oracle.jdbc</groupId>-->
-            <!--<artifactId>ojdbc7</artifactId>-->
-            <!--<version>${oracle.jdbc.version}</version>-->
+        <!--<groupId>com.oracle.jdbc</groupId>-->
+        <!--<artifactId>ojdbc7</artifactId>-->
+        <!--<version>${oracle.jdbc.version}</version>-->
         <!--</dependency>-->
         <!--<dependency>-->
-            <!--<groupId>com.oracle.jdbc</groupId>-->
-            <!--<artifactId>ucp</artifactId>-->
-            <!--<version>${oracle.jdbc.version}</version>-->
+        <!--<groupId>com.oracle.jdbc</groupId>-->
+        <!--<artifactId>ucp</artifactId>-->
+        <!--<version>${oracle.jdbc.version}</version>-->
         <!--</dependency>-->
 
         <!--Logging-->
@@ -86,10 +86,10 @@
         </dependency>
         <!-- JDBC (H2) in memory-->
         <!--<dependency>-->
-            <!--<groupId>com.h2database</groupId>-->
-            <!--<artifactId>h2</artifactId>-->
-            <!--<version>${h2database.version}</version>-->
-            <!--<scope>test</scope>-->
+        <!--<groupId>com.h2database</groupId>-->
+        <!--<artifactId>h2</artifactId>-->
+        <!--<version>${h2database.version}</version>-->
+        <!--<scope>test</scope>-->
         <!--</dependency>-->
 
     </dependencies>

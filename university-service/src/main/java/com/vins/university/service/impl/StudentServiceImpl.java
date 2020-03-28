@@ -14,45 +14,51 @@ import org.springframework.transaction.annotation.Transactional;
  * Created by vova on 7/30/2016.
  */
 @Service
-public class StudentServiceImpl implements IStudentService {
+public class StudentServiceImpl implements IStudentService
+{
     final Logger logger = LoggerFactory.getLogger(StudentServiceImpl.class);
 
     @Autowired
     private StudentRepository studentRepository;
 
-//    @Value("${version}")
+    //    @Value("${version}")
     private int version;
 
-    public StudentServiceImpl() {
+    public StudentServiceImpl()
+    {
         logger.info("Created");
     }
 
-    public StudentServiceImpl(StudentRepository studentRepository, int version) {
-        logger.info("Created {} {}",studentRepository,version);
-        this.studentRepository =  studentRepository;
+    public StudentServiceImpl(StudentRepository studentRepository, int version)
+    {
+        logger.info("Created {} {}", studentRepository, version);
+        this.studentRepository = studentRepository;
         this.version = version;
     }
 
 
     @Transactional
-    public Student create(Student student) {
+    public Student create(Student student)
+    {
         Student dbStudent = studentRepository.save(student);
         logger.info("Created {}", dbStudent);
         return dbStudent;
     }
 
     @Transactional
-    public void delete(Student student) {
+    public void delete(Student student)
+    {
         studentRepository.delete(student);
         logger.info("Deleted {}", student);
     }
 
     @Override
-    public Student findBySid(String sid) {
+    public Student findBySid(String sid)
+    {
         Student student = studentRepository.findBySid(sid);
         if (null == student)
         {
-            throw new EntityNotFoundException("sid",sid);
+            throw new EntityNotFoundException("sid", sid);
         }
         return student;
     }

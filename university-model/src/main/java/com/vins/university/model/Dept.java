@@ -1,31 +1,36 @@
 package com.vins.university.model;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.OneToMany;
-import java.util.Set;
 
 /**
  * Created by vova on 7/30/2016.
  */
 @Entity
-public class Dept extends BaseEntity {
+public class Dept extends BaseEntity
+{
     private String deptCode;
     private String name;
 //    @OneToMany
 //    private Set<Student> students;
 
-    public Dept(String deptCode, String name) {
+
+    public Dept()
+    {
+    }
+
+    public Dept(String deptCode, String name)
+    {
         this.deptCode = deptCode;
         this.name = name;
     }
 
-    public String getDeptCode() {
+    public String getDeptCode()
+    {
         return deptCode;
     }
 
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
@@ -34,7 +39,8 @@ public class Dept extends BaseEntity {
 //    }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         final StringBuilder sb = new StringBuilder("Dept{");
         sb.append(super.toString());
         sb.append(", deptCode='").append(deptCode).append('\'');
