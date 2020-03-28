@@ -20,6 +20,11 @@ public class StudentRestController extends BaseRestController
     @Autowired
     private IStudentService studentService;
 
+    @GetMapping("/greeting")
+    public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+        return "VVV";
+    }
+
     @RequestMapping(value = "/students/{sid}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)

@@ -10,7 +10,6 @@
 
     <mvc:annotation-driven/>
 
-    <context:component-scan base-package="com.demo"/>
 
     <context:component-scan base-package="com.vins.university.rest"/>
 
@@ -32,14 +31,6 @@
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
-
-    <!--<bean id="kisa" class="com.demo.Kisa">-->
-    <!--</bean>-->
-
-    <!--<bean id="koshka" class="com.demo.Koshka">-->
-    <!--<property name="color" value="green" />-->
-    <!--<property name="kisa" ref="kisa" />-->
-    <!--</bean>-->
 
     <!--Embedded in-memory database-->
     <bean id="entityManagerFactory"

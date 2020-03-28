@@ -20,6 +20,11 @@ public class DeptServiceImpl implements IDeptService
     @Autowired
     private DeptRepository deptRepository;
 
+    public DeptServiceImpl()
+    {
+        logger.info("Created");
+    }
+
     @Override
     @Transactional
     public Dept create(Dept dept)
