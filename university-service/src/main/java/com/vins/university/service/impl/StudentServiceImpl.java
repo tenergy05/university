@@ -18,7 +18,6 @@ public class StudentServiceImpl implements IStudentService
 {
     final Logger logger = LoggerFactory.getLogger(StudentServiceImpl.class);
 
-    @Autowired
     private StudentRepository studentRepository;
 
     //    @Value("${version}")
@@ -34,6 +33,12 @@ public class StudentServiceImpl implements IStudentService
         logger.info("Created {} {}", studentRepository, version);
         this.studentRepository = studentRepository;
         this.version = version;
+    }
+
+    @Autowired
+    public StudentServiceImpl(StudentRepository studentRepository)
+    {
+        this.studentRepository = studentRepository;
     }
 
 

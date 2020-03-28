@@ -12,18 +12,19 @@
     <artifactId>university-model</artifactId>
 
     <dependencies>
-        <!--This is old 1.x API -->
-        <!--<dependency>-->
-        <!--<groupId>javax.persistence</groupId>-->
-        <!--<artifactId>persistence-api</artifactId>-->
-        <!--<version>${javax.persistence.version}</version>-->
-        <!--</dependency>-->
 
         <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.1-api</artifactId>
-            <version>${hibernate.jpa.api.version}</version>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+            <version>${javax.persistence.version}</version>
         </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.hibernate.javax.persistence</groupId>-->
+<!--            <artifactId>hibernate-jpa-2.1-api</artifactId>-->
+<!--            <version>${hibernate.jpa.api.version}</version>-->
+<!--        </dependency>-->
+
     </dependencies>
 
 
