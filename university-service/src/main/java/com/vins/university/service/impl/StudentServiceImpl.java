@@ -7,6 +7,7 @@ import com.vins.university.service.exceptions.EntityNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,43 +15,49 @@ import org.springframework.transaction.annotation.Transactional;
  * Created by vova on 7/30/2016.
  */
 @Service
-public class StudentServiceImpl implements IStudentService
+public class StudentServiceImpl extends AbstractCRUDServiceImpl<Student, Long>
+        implements IStudentService
 {
-    final Logger logger = LoggerFactory.getLogger(StudentServiceImpl.class);
-
-    @Autowired
-    private StudentRepository studentRepository;
+//    final Logger logger = LoggerFactory.getLogger(StudentServiceImpl.class);
+//
+    private final StudentRepository studentRepository;
 
     //    @Value("${version}")
-    private int version;
+//    private int version;
 
-    public StudentServiceImpl()
+    public StudentServiceImpl(StudentRepository studentRepository)
     {
         logger.info("Created");
+        this.studentRepository = studentRepository;
     }
 
+    @Override
+    protected CrudRepository<Student, Long> getRepository()
+    {
+        return studentRepository;
+    }
 
-//    @Autowired
+    //    @Autowired
 //    public StudentServiceImpl(StudentRepository studentRepository)
 //    {
 //        this.studentRepository = studentRepository;
 //    }
 
 
-    @Transactional
-    public Student create(Student student)
-    {
-        Student dbStudent = studentRepository.save(student);
-        logger.info("Created {}", dbStudent);
-        return dbStudent;
-    }
-
-    @Transactional
-    public void delete(Student student)
-    {
-        studentRepository.delete(student);
-        logger.info("Deleted {}", student);
-    }
+//    @Transactional
+//    public Student create(Student student)
+//    {
+//        Student dbStudent = studentRepository.save(student);
+//        logger.info("Created {}", dbStudent);
+//        return dbStudent;
+//    }
+//
+//    @Transactional
+//    public void delete(Student student)
+//    {
+//        studentRepository.delete(student);
+//        logger.info("Deleted {}", student);
+//    }
 
     @Override
     public Student findBySid(String sid)
