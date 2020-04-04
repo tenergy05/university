@@ -4,7 +4,6 @@ import com.vins.university.model.Student;
 import com.vins.university.service.api.IStudentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -17,20 +16,24 @@ public class StudentRestController extends BaseRestController
 {
     final Logger logger = LoggerFactory.getLogger(StudentRestController.class);
 
-    @Autowired
-    private IStudentService studentService;
+    private final IStudentService studentService;
+
+    public StudentRestController(IStudentService studentService)
+    {
+        this.studentService = studentService;
+    }
 
     @GetMapping("/greeting")
-    public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+    public String greeting(@RequestParam(value = "name", defaultValue = "World") String name)
+    {
         return "VVV";
     }
 
     @RequestMapping(value = "/students/{sid}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public
     @ResponseBody
-    Student getBySid(@PathVariable String sid,
+    public Student getBySid(@PathVariable String sid,
                      @RequestParam(value = "expands", required = false) String expands)
     {
         logger.info("sid={} expands={}", sid, expands);

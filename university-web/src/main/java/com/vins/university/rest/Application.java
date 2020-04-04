@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 //@Configuration
 //@ComponentScan
 ////@EnableAutoConfiguration
-//@ImportResource({"classpath*:university-rest-api-servlet.xml"})
+//@ImportResource({"classpath*:university-rest-api-servlet.xml.OLD"})
 @SpringBootApplication(scanBasePackages = {
         "com.vins.university.rest",
         "com.vins.university.service",

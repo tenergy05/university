@@ -43,24 +43,12 @@
             <version>${hibernate.version}</version>
         </dependency>
 
-        <!--<dependency>-->
-        <!--<groupId>org.apache.commons</groupId>-->
-        <!--<artifactId>commons-dbcp2</artifactId>-->
-        <!--<version>2.1.1</version>-->
-        <!--</dependency>-->
-
-
-        <!--Oracle JDBC-->
-        <!--<dependency>-->
-        <!--<groupId>com.oracle.jdbc</groupId>-->
-        <!--<artifactId>ojdbc7</artifactId>-->
-        <!--<version>${oracle.jdbc.version}</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>com.oracle.jdbc</groupId>-->
-        <!--<artifactId>ucp</artifactId>-->
-        <!--<version>${oracle.jdbc.version}</version>-->
-        <!--</dependency>-->
+        <!-- JDBC (HSQL) in memory-->
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>${hsqldb.version}</version>
+        </dependency>
 
         <!--Logging-->
         <dependency>
@@ -77,20 +65,9 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- JDBC (HSQL) in memory-->
-        <dependency>
-            <groupId>org.hsqldb</groupId>
-            <artifactId>hsqldb</artifactId>
-            <version>${hsqldb.version}</version>
-            <!--<scope>test</scope>-->
-        </dependency>
-        <!-- JDBC (H2) in memory-->
-        <!--<dependency>-->
-        <!--<groupId>com.h2database</groupId>-->
-        <!--<artifactId>h2</artifactId>-->
-        <!--<version>${h2database.version}</version>-->
-        <!--<scope>test</scope>-->
-        <!--</dependency>-->
+
+
+
 
     </dependencies>
 

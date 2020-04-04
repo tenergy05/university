@@ -18,18 +18,12 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <spring.version>5.2.5.RELEASE</spring.version>
-        <!--        <spring.version>4.3.2.RELEASE</spring.version>-->
-        <!--<spring.version>4.2.6.RELEASE</spring.version>-->
-        <!--        <spring.data.jpa.version>1.10.2.RELEASE</spring.data.jpa.version>-->
         <spring.data.jpa.version>2.2.6.RELEASE</spring.data.jpa.version>
         <spring.boot.version>2.2.6.RELEASE</spring.boot.version>
 
         <javax.persistence.version>2.2</javax.persistence.version>
         <hibernate.jpa.api.version>1.0.2.Final</hibernate.jpa.api.version>
-        <!--<hibernate.version>5.1.0.Final</hibernate.version>-->
         <hibernate.version>5.4.12.Final</hibernate.version>
-        <!--        <hibernate.version>5.0.9.Final</hibernate.version>-->
-        <!--<hibernate.version>5.2.1.Final</hibernate.version>-->
 
         <jaxb.version>2.3.0</jaxb.version>
         <jackson.version>2.10.3</jackson.version>
@@ -45,8 +39,8 @@
 
         <!--databases-->
         <oracle.jdbc.version>12.1.0.2</oracle.jdbc.version>
-        <h2database.version>1.4.192</h2database.version>
-        <hsqldb.version>2.3.4</hsqldb.version>
+<!--        <h2database.version>1.4.200</h2database.version>-->
+        <hsqldb.version>2.5.0</hsqldb.version>
 
         <!--PLUGINS-->
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
